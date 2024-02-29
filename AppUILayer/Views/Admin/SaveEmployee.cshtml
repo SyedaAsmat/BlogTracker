@@ -1,0 +1,42 @@
+﻿@model APPUILayer.Models.EmpInfo
+
+@{
+    ViewData["Title"] = "SaveEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h5 class="text-success">@TempData["SuccessMessage"]</h5>
+
+<h1>Save Employee</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SaveEmployee">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">EmailID: </label>
+                <input asp-for="EmailId" class="form-control" />
+                <span asp-validation-for="EmailId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Name: </label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Date Of Joining:</label>
+                <input asp-for="DateOfJoining" class="form-control" />
+                <span asp-validation-for="DateOfJoining" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Pass-Code: </label>
+                <input asp-for="PassCode" class="form-control" />
+                <span asp-validation-for="PassCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" value="Create" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable< APPUILayer.Models.EmpInfo>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Employee List</h1>
+
+<h5 class="text-success">@TempData["SuccessMessage"]</h5>
+
+<p>
+    <a asp-action="SaveEmployee" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead class="bg-light">
+        <tr>
+            <th>
+                EmailID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Date Of Joining
+            </th>
+            <th>
+                Pass-Code
+                @*@Html.DisplayNameFor(model => model.PassCode)*@
+            </th>
+        </tr>
+    </thead>
+    <tbody style="background-color:deepskyblue">
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfJoining)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassCode)
+            </td>
+            <td>
+                <a class="btn btn-danger" asp-action="EditEmployee" asp-route-id="@item.EmpId">Edit</a>
+                <a class="btn btn-danger" asp-action="DeleteEmployee" asp-route-id="@item.EmpId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

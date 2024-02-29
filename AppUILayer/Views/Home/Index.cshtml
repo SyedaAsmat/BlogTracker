@@ -1,0 +1,30 @@
+﻿@model IEnumerable<APPUILayer.Models.BlogInfo>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="text-center">List of Blogs</h1>
+
+<div class="container mt-5">
+
+    <div class="row">
+        @foreach (var item in Model)
+            {
+        <div class="col-md-6 mb-3">
+            
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </h5>
+                        <p class="card-text">
+                            Date: @Html.DisplayFor(modelItem => item.DateOfCreation)<br />
+                            Subject: @Html.DisplayFor(modelItem => item.Subject)<br />
+                        </p><br />
+                    </div>
+                </div>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<APPUILayer.Models.EmpInfo>
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="text-center">
+    @foreach (var item in Model) {
+    <h1 class="display-4">Welcome @Html.DisplayNameFor(modelItem => item.Name)</h1>
+        <a class="btn btn-success" asp-area="" asp-controller="Employee" asp-action="SaveBlog">Add New</a>
+    }
+</div>
+
+<div class="alert-success text-center">
+    <h5>@TempData["validMsg"]</h5>
+</div>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<APPUILayer.Models.BlogInfo>
+
+@{
+    ViewData["Title"] = "BlogList";
+    Layout = "~/Views/Shared/_EmpLayout.cshtml";
+}
+
+<h5 class="text-success">@TempData["SuccessMessage"]</h5>
+<h1>@ViewBag.msg</h1>
+
+<div class="container mt-5">
+
+    <div class="row">
+        @foreach (var item in Model)
+            {
+        <div class="col-md-6 mb-3">
+            
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </h5>
+                        <p class="card-text">
+                            Date: @Html.DisplayFor(modelItem => item.DateOfCreation)<br />
+                            Subject: @Html.DisplayFor(modelItem => item.Subject)<br />
+                        </p><br />
+                        <a class="card-btn btn btn-blue" style="background-color:dodgerblue; color:white">@Html.DisplayFor(modelItem => item.BlogUrl)</a><br /><br />
+                        <a class="card-btn btn btn-danger" asp-controller="Employee" asp-action="DeleteBlog" asp-route-id="@item.BlogId">Delete</a>
+                        <a class="card-btn btn btn-success" asp-controller="Employee" asp-action="EditBlog" asp-route-id="@item.BlogId">Edit</a>
+                    </div>
+                </div>
+        </div>
+        }
+    </div>
+</div>

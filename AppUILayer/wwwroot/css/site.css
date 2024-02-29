@@ -1,0 +1,32 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+/*
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+table td {
+    padding: 10px;
+}
+.card-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+}

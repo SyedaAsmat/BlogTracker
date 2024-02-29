@@ -1,0 +1,88 @@
+﻿@model IEnumerable<BlogTracker.Models.AdminInfo>
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Admin Login Page</h1>
+
+<h5 class="text-danger">@TempData["ErrorMessage"]</h5>
+
+<div class="login-form">
+    <form method="post" action="@Url.Action("AdminLogin")">
+        <table>
+            <tr>
+                <td>
+                    <label>Email: </label>
+                </td>
+                <td>
+                    <input class="form-control" name="email" id="email" type="text" placeholder="Enter your email" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Password: </label>
+                </td>
+                <td>
+                    <input class="form-control" name="password" id="password" type="password" maxlength="8" placeholder="Enter your password" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="element-with-gap">
+                    <button class="btn btn-danger" type="submit">Log In</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+
+
+
+
+
+@*@model BlogTracker.Models.AdminInfo
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Admin Login Page</h1>
+
+@using (Html.BeginForm("EmployeeList", "Admin", FormMethod.Post))
+{
+<div class="login-form">
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.EmailId)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.EmailId)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        @Html.LabelFor(model => model.Password)
+                </td>
+                <td>
+                        @Html.PasswordFor(model => model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                        <button class="btn btn-danger" type="submit">Log In</button>
+                </td>
+            </tr>
+        </table>
+</div>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p style="color: red;">@ViewBag.ErrorMessage</p>
+}*@
+
+

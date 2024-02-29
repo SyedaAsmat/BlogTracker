@@ -1,0 +1,38 @@
+﻿@model IEnumerable<APPUILayer.Models.EmpInfo>
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Employee Login Page</h1>
+
+<h5 class="text-danger">@TempData["ErrorMessage"]</h5>
+
+<div class="login-form">
+    <form method="post" action="@Url.Action("EmployeeLogin")">
+        <table>
+            <tr>
+                <td>
+                    <label>Email: </label>
+                </td>
+                <td>
+                    <input class="form-control" name="email" id="email" type="text" placeholder="Enter your email" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Password: </label>
+                </td>
+                <td>
+                    <input class="form-control" name="password" id="password" type="password" maxlength="4" placeholder="Enter your password" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="element-with-gap">
+                    <button class="btn btn-danger" type="submit">Log In</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
